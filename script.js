@@ -28,8 +28,8 @@ function fetchRandomData() {
 function getRandomMeal() {
   fetchRandomData();
   // displaySingleMeal(searchMeal);
-  resultHeading.innerHTML = "";
   mealsEl.innerHTML = "";
+  resultHeading.innerHTML = "";
 }
 
 function displaySingleMeal(singleMeal) {
@@ -79,7 +79,7 @@ function searchMeal(e) {
       .then((res) => res.json())
       .then((data) => {
         addMealsToDom(data.meals, queryString);
-        displaySingleMeal(null);
+        single_mealEl.innerHTML = "";
       })
       .catch((err) => console.log(err));
   } else {
